@@ -1,10 +1,30 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { loadRemoteModule } from '@angular-architects/module-federation';
 
-const routes: Routes = [];
+const APP_ROUTES: Routes = [
+  {
+    path: 'mfe-painel-colaborador',
+    loadChildren: () =>
+      loadRemoteModule({
+        type: 'module',
+        remoteEntry: 'http://localhost:4201/remoteEntry.js',
+        exposedModule: './Module',
+      }).then((m) => m.AppModule),
+  },
+  {
+    path: 'mfe-2',
+    loadChildren: () =>
+      loadRemoteModule({
+        type: 'module',
+        remoteEntry: 'http://localhost:4202/remoteEntry.js',
+        exposedModule: './Module',
+      }).then((m) => m.AppModule),
+  },
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(APP_ROUTES)],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
