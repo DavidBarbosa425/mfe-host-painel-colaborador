@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { MaterialModule } from "./libraries/material/material.module";
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 
 
@@ -10,12 +11,14 @@ import { FlexLayoutModule } from "@angular/flex-layout";
   ],
   exports : [
     FlexLayoutModule,
-    MaterialModule
+    MaterialModule,
+    BrowserAnimationsModule
 
   ],
   imports : [
     FlexLayoutModule,
-    MaterialModule
+    MaterialModule,
+    BrowserAnimationsModule
   ]
 })
 
