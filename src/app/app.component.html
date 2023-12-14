@@ -1,11 +1,15 @@
 <div class="container-fluid">
+
   <a *ngIf="isColaborador" routerLink="/mfe-painel-colaborador">
     <titulo-form titulo="Painel do Colaborador"></titulo-form>
   </a>
+
   <a *ngIf="isGestor" routerLink="/mfe-painel-colaborador">
     <titulo-form titulo="Painel do Gestor"></titulo-form>
   </a>
+  
 </div>
+
 <div>
   <router-outlet></router-outlet>
 </div>
