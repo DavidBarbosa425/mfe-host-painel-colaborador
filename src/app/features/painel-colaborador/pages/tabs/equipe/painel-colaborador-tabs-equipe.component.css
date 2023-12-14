@@ -1,0 +1,9 @@
+.div-list-equipe {
+    width: 100%;
+    position: relative;
+    left: 12px;
+    overflow-y: scroll;
+    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.193);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.193);
+ }
+

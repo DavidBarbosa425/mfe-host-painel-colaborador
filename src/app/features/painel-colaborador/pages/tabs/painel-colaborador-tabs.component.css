@@ -1,0 +1,25 @@
+.mat-tab-body.mat-tab-body-active {
+    padding-top: 5px;
+}
+
+.mat-tab-label-active {
+    background-color: #0042c5;
+    color: #fff;
+}
+
+.mat-tab-body-content {
+    overflow: hidden !important;
+}
+
+.mat-tab-body.mat-tab-body-active {
+    min-height: 884px;
+    height: 884px;
+    max-height: 884px;
+}
+
+.expandir{
+    position: absolute;
+    font-size: large;
+    left: 97%;
+    cursor: pointer;
+} 

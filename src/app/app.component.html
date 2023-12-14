@@ -1,6 +1,40 @@
+<<<<<<< Updated upstream
 <div>
   <p ><a class="text-danger" routerLink="/mfe-painel-colaborador">Painel Colaborador</a></p>
 </div>
 <div>
   <router-outlet></router-outlet>
 </div>
+=======
+<ng-container *ngIf="!isExpandir">
+
+  <painel-colaborador></painel-colaborador>
+
+</ng-container>
+
+<span class="expandir text-primary" matTooltip="expandir" (click)="expandir()">&#8661;</span>
+
+  <div>
+    
+    <div class="row mt-2">
+      <div class="col-3">
+        <button class="btn form-control" routerLink="mfe-painel-colaborador">Equipe</button>
+      </div>
+      <div class="col-3">
+        <button class="btn form-control">Ponto</button>
+      </div>
+      <div class="col-3">
+        <button class="btn form-control">Remuneração</button>
+      </div>
+      <div class="col-3">
+        <button class="btn form-control">Avaliações</button>
+      </div>
+    </div>
+    
+  </div>
+
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+  
+>>>>>>> Stashed changes
