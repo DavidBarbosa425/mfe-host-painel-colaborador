@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
-  title = 'mfe-host';
+export class AppComponent implements OnInit {
+
+  isColaborador: boolean = false
+  isGestor:boolean = false
+
+  ngOnInit(): void {
+    this.isColaborador = true
+  }
 }
