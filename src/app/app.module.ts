@@ -2,7 +2,8 @@ import { NgModule } from "@angular/core";
 import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { SharedModule } from "./shared/shared.module";
-import { CustomFormularioModule } from "./shared/template/form/custom-formulario.module";
+import { PainelColaboradorModule } from "./features/painel-colaborador.module";
+
 
 @NgModule({
     declarations: [AppComponent],
@@ -11,7 +12,7 @@ import { CustomFormularioModule } from "./shared/template/form/custom-formulario
     imports: [
         AppRoutingModule,
         SharedModule,
-        CustomFormularioModule
+        PainelColaboradorModule
     ]
 })
 export class AppModule {}

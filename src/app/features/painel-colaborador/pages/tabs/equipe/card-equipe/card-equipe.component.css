@@ -1,0 +1,11 @@
+.picture-card-func {
+    position: relative;
+    height: 63px;
+    width: 63px;
+    border: 1px solid #000;
+    border-radius: 50px;
+}
+
+.div-resumo {
+    background-color: #fff;
+}

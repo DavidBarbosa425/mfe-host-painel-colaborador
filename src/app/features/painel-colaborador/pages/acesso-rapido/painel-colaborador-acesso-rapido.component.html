@@ -1,0 +1,95 @@
+<!-- <mat-progress-bar *ngIf="carregando" mode="indeterminate"></mat-progress-bar> -->
+
+<div>
+    <div class="div-cabecalho shadow rounded">
+        
+        <div class="container-ponto border-right">
+
+            <div class="itens-cabecalho">
+                <span class="titulo-itens-cabecalho" style="opacity:70%;">Ponto</span>
+                
+                <div class="container-sub-itens-cabecalho">
+                    <div class="sub-itens-cabecalho">
+                        <button mat-button [matMenuTriggerFor]="menu">Dia</button>
+                        <mat-menu class="menuSaldoDia" #menu="matMenu">
+                            <span mat-menu-item>
+                                Sem Marcação no Dia
+                            </span>
+                            <span mat-menu-item >
+                                Entrada: 
+                            </span>
+                            <span mat-menu-item>
+                                Saída p/ Café da Manhã:
+                            </span>
+                            <span mat-menu-item >
+                                Retorno:
+                            </span>
+                            <span mat-menu-item>
+                                Saída p/ Almoço:
+                            </span>
+                            <span mat-menu-item>
+                                Retorno:
+                            </span>
+                            <span mat-menu-item>
+                                Saída p/ Café da Tarde:
+                            </span>
+                            <span mat-menu-item >
+                                Retorno: 
+                            </span>
+                            <span mat-menu-item>
+                                Saída 
+                            </span>
+                            <span mat-menu-item>
+                                Saldo do Dia 
+                            </span>
+                        </mat-menu>
+                    </div>
+                    <div class="sub-itens-cabecalho">
+                        <span class="titulo-itens-cabecalho">60 dias</span>
+                        <span>
+                            66
+                        </span>
+                    </div>
+                    <div class="sub-itens-cabecalho">
+                        <span class="titulo-itens-cabecalho">Mês</span>
+                        <span>
+                            77
+                        </span>
+                    </div>
+                    <div class="sub-itens-cabecalho">
+                        <span class="titulo-itens-cabecalho">À Compensar</span>
+                        <span>
+                            99
+                        </span>
+                    </div>
+                    <div class="sub-itens-cabecalho">
+                        <span class="titulo-itens-cabecalho">Saldo Atual</span>
+                        <span>
+                            99
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container-ticket">
+            <div class="itens-cabecalho">
+                <span class="titulo-itens-cabecalho" style="opacity:70%;">Tickets</span>
+                
+                <div class="container-sub-itens-cabecalho">
+                    <div class="sub-itens-cabecalho">
+                        <span class="titulo-itens-cabecalho">Atrasados</span>
+                        <span class="text-danger">99</span>
+                    </div>
+                    <div class="sub-itens-cabecalho">
+                        <span class="titulo-itens-cabecalho">Hoje</span>
+                        <span class="text-warning">115</span>
+                    </div>
+                </div>
+            </div>
+         
+        </div>
+
+    </div>
+</div>

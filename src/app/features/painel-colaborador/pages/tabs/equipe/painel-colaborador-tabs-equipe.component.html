@@ -1,0 +1,12 @@
+<!-- <mat-progress-bar *ngIf="carregando" mode="indeterminate"></mat-progress-bar> -->
+
+<div>
+    <div class="row div-list-equipe">
+        <ng-container>
+
+            <div  class="col-lg-3 mb-2 shadow" *ngFor="let card of cards">
+                <card-equipe [card_equipe]="card"></card-equipe>
+            </div >
+        </ng-container>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+
+.picture-card-func {
+    position: relative;
+    height: 63px;
+    width: 63px;
+    border: 1px solid #000;
+    border-radius: 50px;
+}
+
+.div-resumo {
+    padding: 5px;
+    border-radius: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.193);
+}
+
+.div-superior {    
+    border: 1px solid #cdcdcd;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.193);
+}

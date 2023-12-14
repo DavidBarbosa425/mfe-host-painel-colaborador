@@ -1,0 +1,13 @@
+iframe{
+    width: 100%;
+    height: 100%;
+    background: white;
+}
+
+.expandir{
+    position: absolute;
+    font-size: large;
+    left: 97%;
+    top: -0.5%;
+    cursor: pointer;
+} 

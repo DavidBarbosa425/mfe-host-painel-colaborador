@@ -1,15 +1,33 @@
-<div class="container-fluid">
 
-  <a *ngIf="isColaborador" routerLink="/mfe-painel-colaborador">
-    <titulo-form titulo="Painel do Colaborador"></titulo-form>
-  </a>
+<ng-container *ngIf="!isExpandir">
 
-  <a *ngIf="isGestor" routerLink="/mfe-painel-colaborador">
-    <titulo-form titulo="Painel do Gestor"></titulo-form>
-  </a>
+  <painel-colaborador></painel-colaborador>
+
+</ng-container>
+
+<span class="expandir text-primary" matTooltip="expandir" (click)="expandir()">&#8661;</span>
+
+  <div>
+    
+    <div class="row mt-2">
+      <div class="col-3">
+        <button class="btn form-control" routerLink="/mfe-1">Equipe</button>
+      </div>
+      <div class="col-3">
+        <button class="btn form-control" routerLink="/mfe-2">Ponto</button>
+      </div>
+      <div class="col-3">
+        <button class="btn form-control">Remuneração</button>
+      </div>
+      <div class="col-3">
+        <button class="btn form-control">Avaliações</button>
+      </div>
+    </div>
+    
+  </div>
+
+  <div>
+    <router-outlet></router-outlet>
+  </div>
   
-</div>
 
-<div>
-  <router-outlet></router-outlet>
-</div>

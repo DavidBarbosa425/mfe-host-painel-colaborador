@@ -1,27 +1,31 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from "@angular/core";
-import { MaterialModule } from "./libraries/material/material.module";
 import { FlexLayoutModule } from "@angular/flex-layout";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { BrowserModule } from '@angular/platform-browser'
-
-
+import { MaterialModule } from "./libraries/material/material.module";
+import { CommonModule } from "@angular/common";
+import { RouterModule } from "@angular/router";
+import { BrowserModule } from "@angular/platform-browser";
 
 @NgModule({
   declarations: [
 
   ],
   exports : [
+    CommonModule,
     FlexLayoutModule,
     MaterialModule,
-    BrowserAnimationsModule,
-    BrowserModule
+    RouterModule,
+    BrowserModule,
+    BrowserAnimationsModule
 
   ],
   imports : [
+    CommonModule,
     FlexLayoutModule,
     MaterialModule,
-    BrowserAnimationsModule,
-    BrowserModule
+    RouterModule,
+    BrowserModule,
+    BrowserAnimationsModule
   ]
 })
 
