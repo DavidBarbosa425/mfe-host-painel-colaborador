@@ -1,14 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-<<<<<<< Updated upstream
-export class AppComponent {
-  title = 'mfe-host';
-=======
+
 export class AppComponent implements OnInit {
 
   isColaborador: boolean = false
@@ -22,5 +19,4 @@ export class AppComponent implements OnInit {
   expandir(){
     this.isExpandir = !this.isExpandir
   }
->>>>>>> Stashed changes
 }
