@@ -7,6 +7,7 @@ import { AmbienteEnum, SessaoApp } from './shared/base/sessao-app/sessao.model';
 import { Alerta, AlertaService, TipoAlerta } from './core/services/alert.service';
 import { AuthForm } from './core/auth/auth.model';
 import { AlertComponent } from './shared/template/alert/alert.component';
+import { PermissaoService } from './core/services/permissao.service';
 
 @Component({
   selector: 'app-root',
@@ -23,14 +24,18 @@ export class AppComponent implements OnInit {
 
       
     if (window.addEventListener) {
-      window.addEventListener("message", (listernResult) => {
-        // this.receiveMessageIframe(listernResult)
+      window.addEventListener("message", async (listernResult) => {
+        try {
+          await this.receiveMessageIframe(listernResult);
+        } catch (error) {
+          console.error("Erro no manipulador de eventos:", error);
+        }
       }, false);
-
-      const atualUrl : string = window.location.href
-
     }
+    
   }
+
+  
 
   path: string = ""
   isLogged: boolean = false
@@ -51,10 +56,11 @@ export class AppComponent implements OnInit {
   isGestor:boolean = false
   isExpandir: boolean = false
 
+  sessaoAppProv: SessaoApp = new SessaoApp()
   
-  ngOnInit(): void {
+  async ngOnInit(){
+
     this.isColaborador = true
-    this.salvarNoLocalStorage()
 
     this.isLogged = SessaoAppService.hasSessao()
 
@@ -66,11 +72,14 @@ export class AppComponent implements OnInit {
       this.setProgress(isProgress)
     })
 
-    // this.$subpermissao = PermissaoService.permissaoChange.subscribe((isPermissao) => {
-    //   this.setPermissao(isPermissao)
-    // })
+    this.$subpermissao = PermissaoService.permissaoChange.subscribe((isPermissao) => {
+      this.setPermissao(isPermissao)
+    })
 
     let sessaoApp : SessaoApp = SessaoAppService.getSessao()
+
+    this.sessaoAppProv = SessaoAppService.getSessao()
+    
     if(sessaoApp && sessaoApp.validarSessao()){
       this.setProgress(false)
     }
@@ -138,7 +147,7 @@ export class AppComponent implements OnInit {
 
   //#region Evento
 
-  receiveMessageIframe: any = async (event: any) => {
+  async receiveMessageIframe(event: any) {
 
     if (event.data?.type) {       
       parent.postMessage("refresh page", "*");
