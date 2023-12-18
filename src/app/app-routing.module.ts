@@ -4,7 +4,7 @@ import { loadRemoteModule } from '@angular-architects/module-federation';
 
 const APP_ROUTES: Routes = [
   {
-    path: 'mfe-painel-colaborador',
+    path: 'mfe-1',
     loadChildren: () =>
       loadRemoteModule({
         type: 'module',

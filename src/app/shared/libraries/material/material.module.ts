@@ -36,6 +36,7 @@ import { CdkTableModule } from "@angular/cdk/table";
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatSortModule } from "@angular/material/sort";
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 
 @NgModule({
@@ -77,7 +78,8 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     PortalModule,
     ScrollingModule,
     MatFormFieldModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatButtonToggleModule
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }]
 
