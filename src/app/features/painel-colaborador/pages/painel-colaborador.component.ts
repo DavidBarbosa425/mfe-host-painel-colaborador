@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { BaseComponent } from "../../../shared/base/components/base-page/base.component";
 
 @Component({
   selector: 'painel-colaborador',
@@ -6,10 +7,11 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ['./painel-colaborador.component.css'],
 
 })
-export class PainelColaboradorComponent implements OnInit {
+export class PainelColaboradorComponent extends BaseComponent implements OnInit {
 
   
   ngOnInit(): void {
+    this.sessaoApp.usuarioLogado.Nome
     
   }
 
