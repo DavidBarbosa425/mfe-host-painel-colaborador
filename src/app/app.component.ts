@@ -33,9 +33,9 @@ export class AppComponent implements OnInit {
       }, false);
     }
 
-    window.addEventListener("beforeunload", () => {
-      localStorage.clear();
-    });
+    // window.addEventListener("beforeunload", () => {
+    //   localStorage.clear();
+    // });
     
   }
 
