@@ -5,6 +5,7 @@ import { MaterialModule } from "./libraries/material/material.module";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { BrowserModule } from "@angular/platform-browser";
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { BrowserModule } from "@angular/platform-browser";
     MaterialModule,
     RouterModule,
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
 
   ],
   imports : [
@@ -25,7 +27,8 @@ import { BrowserModule } from "@angular/platform-browser";
     MaterialModule,
     RouterModule,
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ]
 })
 

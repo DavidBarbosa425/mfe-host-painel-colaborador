@@ -37,7 +37,7 @@ export class BaseComponent{
   public sessaoApp : SessaoApp = new SessaoApp()
 
   constructor(
-    // protected http : HttpClient,
+    protected http : HttpClient,
     // protected location : Location,
     // protected route: ActivatedRoute,
     // protected router : Router,
