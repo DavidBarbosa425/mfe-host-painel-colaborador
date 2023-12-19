@@ -3,7 +3,7 @@ import { Inject, Injectable } from '@angular/core';
 import { UsuarioApiService } from './usuario-api.service';
 import { UsuarioFilter, UsuarioGrid } from './usuario.model';
 import { BaseHelperService } from '../../core/base/base-helper.service';
-import { TokenApi } from '../../shared/base/sessao-app/token.model';
+import { TokenApi } from '../../core/sessao-app/token.model';
 
 @Injectable({
   providedIn: 'root'

@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core"
 import { UsuarioGrid, UsuarioInsert, UsuarioUpdate } from "./usuario.model"
-import { TokenApi } from "../../shared/base/sessao-app/token.model"
+import { TokenApi } from "../../core/sessao-app/token.model"
 import { HttpHeaders } from "@angular/common/http"
 import { BaseApiService } from "../../core/base/base-api.service"
 import { appSettings } from "../../core/appSettings"

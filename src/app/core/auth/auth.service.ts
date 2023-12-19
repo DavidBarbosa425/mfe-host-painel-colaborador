@@ -1,11 +1,11 @@
 import { HttpClient, HttpHeaders, HttpXhrBackend } from "@angular/common/http";
 import { EventEmitter, Injectable } from "@angular/core";
-import { SessaoAppService } from "../../shared/base/sessao-app/sessao-app.service";
+import { SessaoAppService } from "../sessao-app/sessao-app.service";
 import { UsuarioHelperService } from "../../features/usuario/usuario-helper.service";
 import { AuthForm } from "./auth.model";
-import { TokenApi } from "../../shared/base/sessao-app/token.model";
+import { TokenApi } from "../sessao-app/token.model";
 import { UsuarioGrid } from "../../features/usuario/usuario.model";
-import { SessaoApp } from "../../shared/base/sessao-app/sessao.model";
+import { SessaoApp } from "../sessao-app/sessao.model";
 import { appSettings } from "../appSettings";
 
 

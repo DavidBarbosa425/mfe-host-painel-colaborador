@@ -1,5 +1,5 @@
 import { BaseModel } from "../../shared/base/models/baseModel"
-import { AmbienteEnum } from "../../shared/base/sessao-app/sessao.model"
+import { AmbienteEnum } from "../sessao-app/sessao.model"
 
 
 export class AuthForm extends BaseModel{

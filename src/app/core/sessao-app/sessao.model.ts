@@ -1,6 +1,6 @@
-import { UsuarioGrid } from "../../../features/usuario/usuario.model"
-import { Utils } from "../../services/utils.service"
-import { BaseModel } from "../models/baseModel"
+import { UsuarioGrid } from "../../features/usuario/usuario.model"
+import { Utils } from "../../shared/services/utils.service"
+import { BaseModel } from "../../shared/base/models/baseModel"
 import { TokenApi } from "./token.model"
 
 

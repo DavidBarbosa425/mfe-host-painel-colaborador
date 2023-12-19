@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './core/auth/auth.service';
-import { SessaoAppService } from './shared/base/sessao-app/sessao-app.service';
+import { SessaoAppService } from './core/sessao-app/sessao-app.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ProgressService } from './core/services/progress.service';
-import { AmbienteEnum, SessaoApp } from './shared/base/sessao-app/sessao.model';
+import { AmbienteEnum, SessaoApp } from './core/sessao-app/sessao.model';
 import { Alerta, AlertaService, TipoAlerta } from './core/services/alert.service';
 import { AuthForm } from './core/auth/auth.model';
 import { AlertComponent } from './shared/template/alert/alert.component';

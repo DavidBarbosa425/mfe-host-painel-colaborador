@@ -1,4 +1,4 @@
-import { BaseModel } from "../models/baseModel"
+import { BaseModel } from "../../shared/base/models/baseModel"
 
 
 export class TokenApi extends BaseModel{

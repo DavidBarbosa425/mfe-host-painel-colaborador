@@ -7,8 +7,8 @@ import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { SessaoApp } from '../../sessao-app/sessao.model';
-import { SessaoAppService } from '../../sessao-app/sessao-app.service';
+import { SessaoApp } from '../../../../core/sessao-app/sessao.model';
+import { SessaoAppService } from '../../../../core/sessao-app/sessao-app.service';
 import { AlertComponent } from '../../../template/alert/alert.component';
 import { FeaturesHelpers } from '../../../../core/services/feature.service';
 
