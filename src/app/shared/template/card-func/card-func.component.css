@@ -1,0 +1,38 @@
+.picture-card-func {
+    position: relative;
+    height: 63px;
+    width: 63px;
+    border: 1px solid #000;
+    border-radius: 50px;
+    /* left: 50%;
+    margin-left: -45px;
+    top: 10px; */
+}
+
+.mat-card-func {
+    padding-top: 0px;
+    min-height: 120px;
+    height: 120px;
+    margin-bottom: 5px !important;
+}
+
+.mat-card-func:not([class*=mat-elevation-z]) {
+    box-shadow: 3px 3px 0px -1px rgb(0 0 0 / 20%), 8px 8px 7px 0px rgb(0 0 0 / 14%), 0px 3px 3px 0px rgb(0 0 0 / 12%);
+}
+
+.divNomeFunc {
+    font-size:14px; 
+    font-weight: bold;
+    /* position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%); */
+    text-transform: uppercase;
+}
+
+.card_sem_borda {
+    
+    background: #fff;
+    border: 0px;
+    box-shadow: none;
+}

@@ -1,39 +1,38 @@
+<mat-progress-bar *ngIf="carregando" mode="indeterminate"></mat-progress-bar>
 
-<!-- <mat-progress-bar *ngIf="carregando" mode="indeterminate"></mat-progress-bar> -->
-
-<div class="container-resumo" >
+<div class="container-resumo" *ngIf="!carregando">
     <div class="div-resumo">
 
         <div class="row" >
 
-            <div class="mb-1 col-lg-4">                
+            <div class="mb-1" [ngClass]="hasSuperior ? 'col-lg-4' : 'col-lg-6'">                
                 <div fxFlex="100%" fxLayout="row" fxLayoutGap="10px">
                     <div class="col-4" style="padding: 5px" fxLayoutAlign="end center">
                         <img [src]="getFoto()" class="picture-card-func">
                     </div>
                     <div class="col-8" fxLayoutAlign="start center">
                         <div class="col-lg-12" fxLayout="column">
-                            <span style="font-weight: bold;">ALEXXSANDER ALMEIDA DA SILVA</span>
-                            <span>ANALISTA DE SISTEMAS</span>
+                            <span style="font-weight: bold;">{{funcionario.nome}}</span>
+                            <span>{{funcionario.cargo}}</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="mb-1 col-lg-4">                
+            <div class="mb-1" [ngClass]="hasSuperior ? 'col-lg-4' : 'col-lg-6'">                
                 <div fxFlex="100%" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
                     <div fxFlex="50%" fxLayout="column">
                         <span style="font-weight: bold;">Empresa</span>
-                        <span>FINANCEIRO24HORAS.COM TECNOLOGIA DA INFORMACAO LTDA</span>
+                        <span>{{funcionario.nomeEmpresa}}</span>
                     </div>
                     <div fxFlex="50%" fxLayout="column">
                         <span style="font-weight: bold;">Departamento</span>
-                        <span>DESENVOLVIMENTO</span>
+                        <span>{{funcionario.departamento}}</span>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-4 mb-1">                
+            <div class="col-lg-4 mb-1" *ngIf="hasSuperior">                
                 <div fxFlex="100%" fxLayout="column" fxLayoutGap="5px" class="div-superior">
                     <div style="font-weight: bold;text-align: center;">Superior</div>
                     <div fxFlex="100%" fxLayout="row" fxLayoutGap="10px">
@@ -42,9 +41,8 @@
                         </div>
                         <div class="col-8" fxLayoutAlign="start center" >
                             <div class="col-lg-12" fxLayout="column">
-                                <span style="font-weight: bold;">ANDRE BONETTI DE OLIVEIRA
-                                </span>
-                                <span>SOCIO GESTOR DESENVOLVIMENTO</span>
+                                <span style="font-weight: bold;">{{funcionarioSuperior.nomeGestor}}</span>
+                                <span>{{funcionarioSuperior.cargo}}</span>
                             </div>
                         </div>
                     </div>

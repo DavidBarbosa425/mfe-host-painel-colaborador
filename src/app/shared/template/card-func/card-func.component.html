@@ -1,0 +1,18 @@
+<mat-card *ngIf="input.nome != ''" [class]="getClassCard()">
+    <div class="row" style="min-height: 77px;" (click)="pressClick()">
+        <div class="col-4 ocultarMobile" style="padding: 5px" fxLayoutAlign="end center">
+            <img [src]="getFoto()" class="picture-card-func">
+        </div>
+        <div class="col-8" fxLayoutAlign="start center">
+            <div class="col-lg-12" class="divNomeFunc">                
+                <span *ngIf="input.chapa" 
+                    style="font-size: 10px !important;">
+                        #{{input.chapa}}
+                </span>
+                <br *ngIf="input.chapa"/>
+                <span>{{input.nome}}</span>                
+            </div>
+        </div>       
+    </div>
+    <ng-content></ng-content>
+</mat-card>
