@@ -32,6 +32,10 @@ export class AppComponent implements OnInit {
         }
       }, false);
     }
+
+    window.addEventListener("beforeunload", () => {
+      localStorage.clear();
+    });
     
   }
 
@@ -55,8 +59,6 @@ export class AppComponent implements OnInit {
   isColaborador: boolean = false
   isGestor:boolean = false
   isExpandir: boolean = false
-
-  sessaoAppProv: SessaoApp = new SessaoApp()
   
   async ngOnInit(){
 
@@ -77,8 +79,6 @@ export class AppComponent implements OnInit {
     })
 
     let sessaoApp : SessaoApp = SessaoAppService.getSessao()
-
-    this.sessaoAppProv = SessaoAppService.getSessao()
     
     if(sessaoApp && sessaoApp.validarSessao()){
       this.setProgress(false)
