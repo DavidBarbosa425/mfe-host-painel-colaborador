@@ -10,3 +10,33 @@
 button{
     width: 100%;
 }
+
+.progress {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    z-index: 9000 !important;
+}
+
+.divMsg {
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff59d;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.router-outlet {
+    position: relative;
+    height: 100vh;
+}
+
+@media (max-width: 991px) {
+    
+    .router-outlet {
+        position: relative;
+        /* // padding-left: 30px; */
+        /* // padding-right: 0px; */
+    }
+}

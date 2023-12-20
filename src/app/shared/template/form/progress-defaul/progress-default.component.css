@@ -1,0 +1,53 @@
+html,
+body {
+    height: 100%;
+}
+
+.container-fluid {
+    position: absolute;
+    height: 100%;
+    background-color: rgba(39, 39, 39, 0.2);
+    z-index: 1;
+}
+
+.mat-progress {
+    position: absolute;
+    top: 50%;
+    max-width: 250px;
+    margin-top: -43px;
+    width: 100%;
+    left: 50%;
+    margin-left: -125px;    
+    height: 76px !important;
+    max-height: 76px !important;
+    z-index: 2;
+}
+
+.mat-progress i {
+    position: absolute;
+}
+
+.progressLoop {
+    -webkit-animation: spin 4s linear infinite;
+    -moz-animation: spin 4s linear infinite;
+    animation: spin 4s linear infinite;
+}
+
+@-moz-keyframes spin {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}

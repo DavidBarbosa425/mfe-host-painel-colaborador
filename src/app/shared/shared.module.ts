@@ -6,9 +6,11 @@ import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { BrowserModule } from "@angular/platform-browser";
 import { HttpClientModule } from '@angular/common/http';
+import { ProgressDefaultComponent } from './template/form/progress-defaul/progress-default.component';
 
 @NgModule({
   declarations: [
+    ProgressDefaultComponent
 
   ],
   exports : [
@@ -18,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule,
     BrowserModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    ProgressDefaultComponent
 
   ],
   imports : [
