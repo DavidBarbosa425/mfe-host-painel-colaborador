@@ -1,6 +1,6 @@
-import { EventEmitter, Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { SessaoApp } from './sessao.model';
+import { EventEmitter, Injectable } from "@angular/core";
+import { SessaoApp } from "./sessao.model";
+
 
 const KEY = 'sessaoApp';
 @Injectable({ providedIn: 'root' })

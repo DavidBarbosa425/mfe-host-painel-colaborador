@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, NgZone, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from './core/auth/auth.service';
 import { SessaoAppService } from './core/sessao-app/sessao-app.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -15,31 +15,13 @@ import { PermissaoService } from './core/services/permissao.service';
   styleUrl: './app.component.css'
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent {
 
   constructor(
     private authService: AuthService,
-    private sessaoService: SessaoAppService,
-    public _snackBar: MatSnackBar) {
+    public _snackBar: MatSnackBar) {  }
 
-      
-    if (window.addEventListener) {
-      window.addEventListener("message", async (listernResult) => {
-        try {
-          await this.receiveMessageIframe(listernResult);
-        } catch (error) {
-          console.error("Erro no manipulador de eventos:", error);
-        }
-      }, false);
-    }
-
-    // window.addEventListener("beforeunload", () => {
-    //   localStorage.clear();
-    // });
-    
-  }
-
-  
+  @ViewChild('iframeElement') iframeElement: ElementRef | undefined
 
   path: string = ""
   isLogged: boolean = false
@@ -65,9 +47,11 @@ export class AppComponent implements OnInit {
 
     this.isColaborador = true
 
+    window.addEventListener('message', await this.receiveMessageIframe.bind(this))
+
     this.isLogged = SessaoAppService.hasSessao()
 
-    this.$subsessao = SessaoAppService.sessaoAppChanged.subscribe((isLogged) => {
+    this.$subsessao = SessaoAppService.sessaoAppChanged.subscribe(() => {
       this.isLogged = SessaoAppService.hasSessao()
     })
 
@@ -108,6 +92,7 @@ export class AppComponent implements OnInit {
     this.$subcatch = AlertaService.catch.subscribe((error) => {
       this.openCatchError(error)
     })
+
   }
 
   ngOnDestroy(): void {
@@ -180,6 +165,7 @@ export class AppComponent implements OnInit {
     }, 2000);
 
     this.sessaoApp = SessaoAppService.getSessao()
+
   }
 
   public openSuccessSnackBar(error) {
