@@ -7,6 +7,8 @@ import { RouterModule } from "@angular/router";
 import { BrowserModule } from "@angular/platform-browser";
 import { HttpClientModule } from '@angular/common/http';
 import { ProgressDefaultComponent } from './template/form/progress-defaul/progress-default.component';
+import { CustomFontAwesomeModule } from './libraries/font-awesome/fa.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ProgressDefaultComponent } from './template/form/progress-defaul/progre
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ProgressDefaultComponent
+    ProgressDefaultComponent,
+    CustomFontAwesomeModule,
+    FontAwesomeModule
 
   ],
   imports : [
@@ -31,7 +35,9 @@ import { ProgressDefaultComponent } from './template/form/progress-defaul/progre
     RouterModule,
     BrowserModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    CustomFontAwesomeModule,
+    FontAwesomeModule
   ]
 })
 

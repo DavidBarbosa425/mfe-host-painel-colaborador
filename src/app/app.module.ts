@@ -25,7 +25,7 @@ import { DatePipe } from "@angular/common";
     imports: [
         AppRoutingModule,
         SharedModule,
-        PainelColaboradorModule
+        PainelColaboradorModule,
     ]
 })
 export class AppModule {}

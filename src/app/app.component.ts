@@ -59,6 +59,7 @@ export class AppComponent implements OnInit {
   isColaborador: boolean = false
   isGestor:boolean = false
   isExpandir: boolean = false
+  sessaoApp : SessaoApp = new SessaoApp()
   
   async ngOnInit(){
 
@@ -78,9 +79,9 @@ export class AppComponent implements OnInit {
       this.setPermissao(isPermissao)
     })
 
-    let sessaoApp : SessaoApp = SessaoAppService.getSessao()
+    this.sessaoApp = SessaoAppService.getSessao()
     
-    if(sessaoApp && sessaoApp.validarSessao()){
+    if(this.sessaoApp && this.sessaoApp.validarSessao()){
       this.setProgress(false)
     }
 
@@ -177,6 +178,8 @@ export class AppComponent implements OnInit {
       this.authService.authenticate(authForm, this.data.idClienteSelecionado)
       ProgressService.progressChange.emit(false)
     }, 2000);
+
+    this.sessaoApp = SessaoAppService.getSessao()
   }
 
   public openSuccessSnackBar(error) {
