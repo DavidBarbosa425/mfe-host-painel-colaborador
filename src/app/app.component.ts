@@ -1,4 +1,4 @@
-import { Component, ElementRef, NgZone, OnInit, ViewChild } from '@angular/core';
+import { Component, DoCheck, ElementRef, NgZone, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { AuthService } from './core/auth/auth.service';
 import { SessaoAppService } from './core/sessao-app/sessao-app.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -15,12 +15,13 @@ import { PermissaoService } from './core/services/permissao.service';
   styleUrl: './app.component.css'
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit, DoCheck {
 
   constructor(
     private authService: AuthService,
     public _snackBar: MatSnackBar) {  }
 
+ 
   @ViewChild('iframeElement') iframeElement: ElementRef | undefined
 
   path: string = ""
@@ -42,58 +43,68 @@ export class AppComponent {
   isGestor:boolean = false
   isExpandir: boolean = false
   sessaoApp : SessaoApp = new SessaoApp()
+  SessaoAppService: SessaoAppService = new SessaoAppService()
   
   async ngOnInit(){
-
-    this.isColaborador = true
-
-    window.addEventListener('message', await this.receiveMessageIframe.bind(this))
-
-    this.isLogged = SessaoAppService.hasSessao()
-
-    this.$subsessao = SessaoAppService.sessaoAppChanged.subscribe(() => {
-      this.isLogged = SessaoAppService.hasSessao()
-    })
-
-    this.$subprogress = ProgressService.progressChange.subscribe((isProgress) => {
-      this.setProgress(isProgress)
-    })
-
-    this.$subpermissao = PermissaoService.permissaoChange.subscribe((isPermissao) => {
-      this.setPermissao(isPermissao)
-    })
-
-    this.sessaoApp = SessaoAppService.getSessao()
     
-    if(this.sessaoApp && this.sessaoApp.validarSessao()){
-      this.setProgress(false)
-    }
-
-
-    this.$subalerta = AlertaService.alerta.subscribe((alerta: Alerta) => {
-
-      if (this.mensagem_ult_2_segundos != alerta.mensagem)
-        this.mensagem_ult_2_segundos = alerta.mensagem
-      else
-        return
-
-      if (alerta.tipo == TipoAlerta.SUCCESS)
-        this.openSuccessSnackBar(alerta.mensagem)
-      else if (alerta.tipo == TipoAlerta.WARNING)
-        this.openWarningSnackBar(alerta.mensagem)
-      else if (alerta.tipo == TipoAlerta.DANGER)
-        this.openErrorSnackBar(alerta.mensagem)
-
-      setTimeout(() => {
-        this.mensagem_ult_2_segundos = ""
-      }, 2000);
-    })
-
-    this.$subcatch = AlertaService.catch.subscribe((error) => {
-      this.openCatchError(error)
-    })
-
+    window.addEventListener('message', await this.receiveMessageIframe.bind(this))
+  
   }
+
+  ngDoCheck(): void {
+
+    if(this.isMensagemRecebida){
+
+      this.isColaborador = true
+
+      this.isLogged = SessaoAppService.hasSessao()
+  
+      this.$subsessao = SessaoAppService.sessaoAppChanged.subscribe(() => {
+        this.isLogged = SessaoAppService.hasSessao()
+      })
+  
+      this.$subprogress = ProgressService.progressChange.subscribe((isProgress) => {
+        this.setProgress(isProgress)
+      })
+  
+      this.$subpermissao = PermissaoService.permissaoChange.subscribe((isPermissao) => {
+        this.setPermissao(isPermissao)
+      })
+  
+      this.sessaoApp = SessaoAppService.getSessao()
+      
+      if(this.sessaoApp && this.sessaoApp.validarSessao()){
+        this.setProgress(false)
+      }
+  
+  
+      this.$subalerta = AlertaService.alerta.subscribe((alerta: Alerta) => {
+  
+        if (this.mensagem_ult_2_segundos != alerta.mensagem)
+          this.mensagem_ult_2_segundos = alerta.mensagem
+        else
+          return
+  
+        if (alerta.tipo == TipoAlerta.SUCCESS)
+          this.openSuccessSnackBar(alerta.mensagem)
+        else if (alerta.tipo == TipoAlerta.WARNING)
+          this.openWarningSnackBar(alerta.mensagem)
+        else if (alerta.tipo == TipoAlerta.DANGER)
+          this.openErrorSnackBar(alerta.mensagem)
+  
+        setTimeout(() => {
+          this.mensagem_ult_2_segundos = ""
+        }, 2000);
+      })
+  
+      this.$subcatch = AlertaService.catch.subscribe((error) => {
+        this.openCatchError(error)
+      })
+  
+    }
+        
+  }
+
 
   ngOnDestroy(): void {
     this.$subsessao.unsubscribe()
